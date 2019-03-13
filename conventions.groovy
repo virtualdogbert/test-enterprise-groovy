@@ -17,8 +17,11 @@
  *  under the License.
  */
 
-conventions = [
-        disableDynamicCompile       : true,
+Map conventions = [
+        disable                     : false,
+        whiteListScripts            : false,
+
+        disableDynamicCompile       : false,
         dynamicCompileWhiteList     : [
                 //'Test',
                 //'TestController2',
@@ -27,7 +30,10 @@ conventions = [
                 'Script1',
                 'BootStrap',
                 'resources',
-                'org.grails.cli'
+                'org.grails.cli',
+                //'EnterpriseGroovyASTTransformationSpec',
+                'conventions',
+                'conventions2'
         ],
 
         compileStaticExtensions     : [
@@ -36,11 +42,12 @@ conventions = [
                 'org.grails.compiler.HttpServletRequestTypeCheckingExtension',
                 'org.grails.compiler.WhereQueryTypeCheckingExtension',
                 'org.grails.compiler.DynamicFinderTypeCheckingExtension',
-                'org.grails.compiler.DomainMappingTypeCheckingExtension',
-                'org.grails.compiler.RelationshipManagementMethodTypeCheckingExtension'
+                'org.grails.compiler.DomainMappingTypeCheckingExtension'
         ],
 
         limitCompileStaticExtensions: false,
-        defAllowed                  : false,
-        skipDefaultPackage          : true,
+        defAllowed                  : true, //For controllers you can use Object in place of def, and in Domains add Closure to constraints/mappings closure fields.
+        skipDefaultPackage          : true, //For GSP files
 ]
+
+System.setProperty('enterprise.groovy.conventions', "conventions=${conventions.inspect()}")

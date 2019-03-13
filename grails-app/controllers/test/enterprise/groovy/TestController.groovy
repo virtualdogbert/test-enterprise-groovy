@@ -20,10 +20,12 @@
  package test.enterprise.groovy
 
 import grails.converters.JSON
+//import groovy.transform.CompileDynamic
+//
 //@CompileDynamic
 class TestController {
 
-    //def var1
+//    def var1
     //private var2
 
 

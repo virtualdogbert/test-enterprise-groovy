@@ -27,7 +27,7 @@ buildscript {
         classpath "org.grails:grails-gradle-plugin:$grailsVersion"
         classpath "org.grails.plugins:hibernate5:${gormVersion-".RELEASE"}"
         classpath "com.bertramlabs.plugins:asset-pipeline-gradle:2.15.1"
-        classpath 'com.virtualdogbert:enterprise-groovy-plugin:1.0.RC1'
+        classpath 'com.virtualdogbert:enterprise-groovy-plugin:1.0.1'
     }
 }
 
@@ -79,6 +79,7 @@ dependencies {
     testCompile "org.grails:grails-web-testing-support"
     testRuntime "org.seleniumhq.selenium:selenium-htmlunit-driver:2.47.1"
     testRuntime "net.sourceforge.htmlunit:htmlunit:2.18"
+    compile "com.virtualdogbert:enterprise-groovy:1.0.1"
 }
 
 bootRun {
